@@ -1,0 +1,36 @@
+.keyboard {
+  width: 80rem;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 2px solid $color__light;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: $spacing--large;
+
+  &__keys {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__key {
+    padding: $spacing--large $spacing;
+    margin: 0;
+    border: solid 2px $color__light;
+    color: $color__black;
+    box-sizing: border-box;
+  }
+}
+
+.key {
+  display: flex;
+  flex-direction: column;
+  &__name {
+    font-weight: 600;
+  }
+  &__code {
+    color: $color__light;
+  }
+}
