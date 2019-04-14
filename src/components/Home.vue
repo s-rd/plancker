@@ -1,20 +1,20 @@
 <template>
   <div class="home">
     <main class="keyboard__list">
-      <div class="keyboard keyboard--ghost keyboard--ghost-upper">
+      <div v-for="ghost in uppers" class="keyboard keyboard--ghost keyboard--ghost-upper">
         <ul class="keyboard__keys">
           <li v-for="key in 48" class="keyboard__key key"></li>
         </ul>
       </div>
       <div class="keyboard">
         <ul class="keyboard__keys">
-          <li v-for="key in keys" class="keyboard__key key">
+          <li v-for="(key, i) in keys" class="keyboard__key key" :class="`key--${i}`">
             <span class="key__name">{{ key.name }}</span>
             <span class="key__code">{{ key.code }}</span>
           </li>
         </ul>
       </div>
-      <div class="keyboard keyboard--ghost keyboard--ghost-lower">
+      <div v-for="ghost in lowers" class="keyboard keyboard--ghost keyboard--ghost-lower">
         <ul class="keyboard__keys">
           <li v-for="key in 48" class="keyboard__key key"></li>
         </ul>
@@ -32,6 +32,8 @@ export default {
     return {
       keys: keymap,
       rowAmount: 4,
+      uppers: 0,
+      lowers: 0,
     }
   },
   computed: {

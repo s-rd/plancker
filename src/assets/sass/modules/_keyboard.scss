@@ -1,29 +1,37 @@
 .keyboard {
   width: 80rem;
   max-width: 100%;
-  border-radius: 20px;
-  border: 3px solid;
-  border-color: $color__tertiary;
   padding: 0;
   margin: 0 auto;
-  overflow: hidden;
-  backface-visibility: hidden;
-  transform: rotateX(40deg);
-  transition: ease 0.2s transform;
-  transform-origin: center center;
-  background: rgba($color__white, 0.975);
   color: $color__tertiary;
-  z-index: 10;
+  border-color: $color__tertiary;
+  perspective: 1800px;
+  z-index: 15;
+  position: relative;
 
   &__list {
     width: 100%;
   }
   &__keys {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 0;
     margin: 0;
+    overflow: hidden;
+    transform-style: flat;
+    transform: rotateX(25deg);
+    transition: ease 0.2s transform;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     list-style: none;
+    color: inherit;
+    background: rgba($color__white, 0.975);
+    border: 3px solid;
+    border-color: inherit;
+    border-radius: 20px;
+    &:hover {
+      transform: rotateX(20deg);
+    }
   }
   &__key {
     padding: $spacing--medium $spacing;
@@ -36,23 +44,22 @@
   }
 
   &--ghost {
+    // opacity: 0.25;
+    // filter: blur(10px);
   }
   &--ghost-upper {
-    margin-bottom: -10rem;
-    z-index: 15;
+    z-index: 10;
+    margin-bottom: -12rem;
     color: $color__primary;
     border-color: $color__primary;
   }
   &--ghost-lower {
-    margin-top: -8rem;
     z-index: 5;
-    color: $color__secondary;
-    border-color: $color__secondary;
+    margin-top: -12rem;
+    color: $color__primary;
+    border-color: $color__primary;
   }
 
-  &:hover {
-    transform: rotateX(35deg),
-  }
 }
 
 .key {
@@ -74,4 +81,9 @@
     font-size: 15px;
     display: none;
   }
+
+  &--0 { border-top-left-radius: 17px; }
+  &--11 { border-top-right-radius: 17px; }
+  &--36 { border-bottom-left-radius: 17px; }
+  &--47 { border-bottom-right-radius: 17px; }
 }
