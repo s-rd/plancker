@@ -67,6 +67,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: ease 1s 1s background;
 
   &__name {
     font-weight: 600;
@@ -80,6 +81,11 @@
     font-weight: 600;
     font-size: 15px;
     display: none;
+  }
+
+  &:hover {
+    background: $color__primary;
+    transition: 0s;
   }
 
   &--0 { border-top-left-radius: 17px; }
