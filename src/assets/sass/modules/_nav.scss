@@ -1,0 +1,21 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: $spacing--medium;
+  background: transparent;
+
+  &__logo {
+    display: inline-block;
+    background: $color__primary;
+    color: $color__tertiary;
+    padding: 0.75rem 1rem;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: rgba($color__tertiary, 0.05) 0px 3px 35px;
+  }
+}
