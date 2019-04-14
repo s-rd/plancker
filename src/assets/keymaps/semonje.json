@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Esc",
+    "code": "KC_ESC"
+  },
+  {
+    "name": "Q",
+    "code": "KC_Q"
+  },
+  {
+    "name": "W",
+    "code": "KC_W"
+  },
+  {
+    "name": "E",
+    "code": "KC_E"
+  },
+  {
+    "name": "R",
+    "code": "KC_R"
+  },
+  {
+    "name": "T",
+    "code": "KC_T"
+  },
+  {
+    "name": "Y",
+    "code": "KC_Y"
+  },
+  {
+    "name": "U",
+    "code": "KC_U"
+  },
+  {
+    "name": "I",
+    "code": "KC_I"
+  },
+  {
+    "name": "O",
+    "code": "KC_O"
+  },
+  {
+    "name": "P",
+    "code": "KC_P"
+  },
+  {
+    "name": "Bspc",
+    "code": "KC_BSPS"
+  },
+  {
+    "name": "Tab",
+    "code": "KC_TAB"
+  },
+  {
+    "name": "A",
+    "code": "KC_A"
+  },
+  {
+    "name": "S",
+    "code": "KC_S"
+  },
+  {
+    "name": "D",
+    "code": "KC_D"
+  },
+  {
+    "name": "F",
+    "code": "KC_F"
+  },
+  {
+    "name": "G",
+    "code": "KC_G"
+  },
+  {
+    "name": "H",
+    "code": "KC_H"
+  },
+  {
+    "name": "J",
+    "code": "KC_J"
+  },
+  {
+    "name": "K",
+    "code": "KC_K"
+  },
+  {
+    "name": "L",
+    "code": "KC_L"
+  },
+  {
+    "name": "Å",
+    "code": "KC_Å"
+  },
+  {
+    "name": "Entr",
+    "code": "KC_ENTER"
+  },
+  {
+    "name": "Sft",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Z",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "X",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "C",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "V",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "B",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "N",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "M",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Ø",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Æ",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": ",",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": ".",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "FN",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Ctrl",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Opt",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Cmd",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Lwr",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Spc",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Spc",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "Rse",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "←",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "↓",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "↑",
+    "code": "KC_LSFT"
+  },
+  {
+    "name": "→",
+    "code": "KC_LSFT"
+  }
+]

@@ -1,36 +1,77 @@
 .keyboard {
   width: 80rem;
   max-width: 100%;
-  border-radius: 10px;
-  border: 2px solid $color__light;
+  border-radius: 20px;
+  border: 3px solid;
+  border-color: $color__tertiary;
   padding: 0;
   margin: 0 auto;
   overflow: hidden;
-  margin-top: $spacing--large;
+  backface-visibility: hidden;
+  transform: rotateX(40deg);
+  transition: ease 0.2s transform;
+  transform-origin: center center;
+  background: rgba($color__white, 0.9);
+  color: $color__tertiary;
+  z-index: 10;
 
+  &__list {
+    width: 100%;
+  }
   &__keys {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 0;
     margin: 0;
     list-style: none;
   }
   &__key {
-    padding: $spacing--large $spacing;
+    padding: $spacing--medium $spacing;
     margin: 0;
-    border: solid 2px $color__light;
-    color: $color__black;
+    border: solid 3px;
+    border-color: inherit;
+    color: inherit;
     box-sizing: border-box;
+    min-height: 100px;
+  }
+
+  &--ghost {
+  }
+  &--ghost-upper {
+    margin-bottom: -10rem;
+    z-index: 15;
+    color: $color__primary;
+    border-color: $color__primary;
+  }
+  &--ghost-lower {
+    margin-top: -8rem;
+    z-index: 5;
+    color: $color__secondary;
+    border-color: $color__secondary;
+  }
+
+  &:hover {
+    transform: rotateX(35deg),
   }
 }
 
 .key {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   &__name {
     font-weight: 600;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
   }
   &__code {
-    color: $color__light;
+    opacity: 0;
+    visibility: hidden;
+    font-weight: 600;
+    font-size: 15px;
+    display: none;
   }
 }
