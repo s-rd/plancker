@@ -1,0 +1,52 @@
+.button {
+  height: 55px;
+  width: auto;
+  border: none;
+  background: $color__light;
+  color: $color__tertiary;
+  border-radius: $spacing--large;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 $spacing--mid;
+  margin-bottom: $spacing--medium;
+  transition: ease 0.2s transform, ease 0.2s box-shadow;
+
+
+  &--icon {
+    position: relative;
+    overflow: hidden;
+    padding-left: 45px;
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 55px;
+      line-height: 52px;
+      display: inline-block;
+      color: $color__tertiary;
+      margin-right: $spacing--small;
+      font-size: 1.5rem;
+    }
+    &.icon {
+      &--add::before {
+        content: "+";
+      }
+    }
+  }
+  &--primary {
+    background: $color__primary;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba($color__tertiary, 0.05) 0px 3px 25px;
+  }
+  &:active {
+    transform: translateY(0);
+    transition-duration: 0.1s;
+  }
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,9 +1,10 @@
 <template>
   <div class="home">
     <main class="keyboard__list">
+      <button class="keyboard__add-button button button--icon button--primary icon--add"><span>Add layer</span></button>
       <div v-for="ghost in uppers" class="keyboard keyboard--ghost keyboard--ghost-upper">
         <ul class="keyboard__keys">
-          <li v-for="key in 48" class="keyboard__key key"></li>
+          <li v-for="(key, i) in 48" class="keyboard__key key" :class="`key--${i}`"></li>
         </ul>
       </div>
       <div class="keyboard">
@@ -16,9 +17,12 @@
       </div>
       <div v-for="ghost in lowers" class="keyboard keyboard--ghost keyboard--ghost-lower">
         <ul class="keyboard__keys">
-          <li v-for="key in 48" class="keyboard__key key"></li>
+          <li v-for="(key, i) in 48" class="keyboard__key key" :class="`key--${i}`"></li>
         </ul>
       </div>
+      <button class="keyboard__add-button button button--icon icon--add"><span>Add layer</span></button>
+      <button class="keyboard__add-button button button--primary"><span>Add layer</span></button>
+      <button class="keyboard__add-button button"><span>Add layer</span></button>
     </main>
   </div>
 </template>
