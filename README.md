@@ -1,4 +1,6 @@
-# plancker
+![Plancker Screenshot](screenshot.png)
+
+# Plancker
 
 > Configure your planck keyboard 🤓
 
