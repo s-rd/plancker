@@ -5,17 +5,24 @@
   background: $color__light;
   color: $color__tertiary;
   border-radius: $spacing--large;
+  text-align: left;
   font-size: 1.2rem;
   font-weight: 600;
   padding: 0 $spacing--mid;
   margin-bottom: $spacing--medium;
-  transition: ease 0.2s transform, ease 0.2s box-shadow;
+  transition: ease 0.2s transform,
+              ease 0.2s box-shadow,
+              ease 0.5s max-width;
 
 
   &--icon {
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
     padding-left: 45px;
+    padding-right: 0;
+    width: auto;
+    max-width: 55px;
     &::before {
       position: absolute;
       top: 0;
@@ -27,10 +34,23 @@
       color: $color__tertiary;
       margin-right: $spacing--small;
       font-size: 1.5rem;
+      text-align: center;
+    }
+    span {
+      opacity: 0;
+      transition: ease 0.3s opacity;
+      padding-right: $spacing--mid;
     }
     &.icon {
       &--add::before {
         content: "+";
+      }
+    }
+    &:hover {
+      transform: translateY(-2px);
+      max-width: 160px;
+      span {
+        opacity: 1;
       }
     }
   }

@@ -21,8 +21,6 @@
         </ul>
       </div>
       <button class="keyboard__add-button button button--icon icon--add"><span>Add layer</span></button>
-      <button class="keyboard__add-button button button--primary"><span>Add layer</span></button>
-      <button class="keyboard__add-button button"><span>Add layer</span></button>
     </main>
   </div>
 </template>
