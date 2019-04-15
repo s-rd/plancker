@@ -1,0 +1,63 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__line {
+    display: block;
+    height: inherit;
+    width: 6px;
+    background: $color__light;
+    margin: $spacing--small auto;
+    border-radius: 3px;
+    order: 2;
+    position: relative;
+  }
+  &__fill {
+
+  }
+  &__handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: $color__tertiary;
+    border-radius: 50%;
+    cursor: -webkit-grab;
+    transition: ease 0.1s all;
+    &:hover {
+      width: 30px;
+      height: 30px;
+      box-shadow: rgba($color__tertiary, 0.05) 0px 3px 25px;
+    }
+    &:active {
+      box-shadow: rgba($color__tertiary, 0.05) 0px 3px 25px;
+      cursor: -webkit-grabbing;
+      width: 25px;
+      height: 25px;
+      user-select: none;
+    }
+  }
+  &__label {
+    opacity: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color__tertiary;
+    &--min {
+      order: 1;
+    }
+    &--max {
+      order: 3;
+    }
+  }
+
+  &--vertical {
+    height: 300px;
+    width: auto;
+  }
+  &--horizontal {
+    // @TODO whenever I need it lol
+  }
+}

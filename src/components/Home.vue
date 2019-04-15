@@ -1,5 +1,13 @@
 <template>
   <div class="home">
+    <div class="home__slider slider slider--vertical">
+      <span class="slider__line">
+        <span class="slider__fill"></span>
+        <span class="slider__handle"></span>
+      </span>
+      <span class="slider__label slider__label--max">Max</span>
+      <span class="slider__label slider__label--min">Min</span>
+    </div>
     <main class="keyboard__list">
       <button class="keyboard__add-button button button--icon button--primary icon--add"><span>Add layer</span></button>
       <div v-for="ghost in uppers" class="keyboard keyboard--ghost keyboard--ghost-upper">
