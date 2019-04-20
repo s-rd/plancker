@@ -10,5 +10,6 @@
   &__slider {
     position: absolute;
     left: $spacing--yuge;
+    z-index: 100;
   }
 }

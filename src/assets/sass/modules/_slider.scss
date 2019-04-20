@@ -6,38 +6,65 @@
   &__line {
     display: block;
     height: inherit;
-    width: 6px;
+    width: 8px;
     background: $color__light;
     margin: $spacing--small auto;
-    border-radius: 3px;
+    border-radius: 4px;
     order: 2;
     position: relative;
   }
   &__fill {
-
+    display: block;
+    bottom: 0;
+    width: 8px;
+    top: 50%;
+    background: $color__black;
+    position: absolute;
+    border-radius: inherit;
+    transition: ease 0.3s all;
   }
   &__handle {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background: $color__tertiary;
     border-radius: 50%;
     cursor: -webkit-grab;
-    transition: ease 0.1s all;
+    transition: ease 0.3s all;
     &:hover {
       width: 30px;
       height: 30px;
+      transition: ease 0.1s all;
       box-shadow: rgba($color__tertiary, 0.05) 0px 3px 25px;
     }
     &:active {
+      transition: ease 0.1s all;
       box-shadow: rgba($color__tertiary, 0.05) 0px 3px 25px;
       cursor: -webkit-grabbing;
       width: 25px;
       height: 25px;
       user-select: none;
     }
+  }
+  &__handle-label {
+    opacity: 0;
+    position: absolute;
+    margin-left: $spacing--medium;
+    top: 50%;
+    transform: translate(-1rem, -52%);
+    padding: $spacing;
+    background: $color__primary;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $color__black;
+    white-space: nowrap;
+    transition: ease 0.3s transform, ease 0.3s opacity;
+    transition-delay: 0.1s;
+    box-shadow: rgba($color__tertiary, 0.05) 0px 3px 25px;
+    pointer-events: none;
   }
   &__label {
     opacity: 0;
@@ -59,5 +86,19 @@
   }
   &--horizontal {
     // @TODO whenever I need it lol
+  }
+
+  &--dragging {
+    .slider__handle {
+      transition: 0s;
+    }
+    .slider__handle-label {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0, -52%);
+    }
+    .slider__fill {
+      transition: 0s;
+    }
   }
 }

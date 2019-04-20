@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <div class="home__slider slider slider--vertical">
-      <span class="slider__line">
-        <span class="slider__fill"></span>
-        <span class="slider__handle"></span>
-      </span>
-      <span class="slider__label slider__label--max">Max</span>
-      <span class="slider__label slider__label--min">Min</span>
-    </div>
+
+    <vertical-slider
+      class="home__slider"
+      :value.sync="slider.value"
+      :min-value="slider.min"
+      :max-value="slider.max"
+      :custom-label="sliderLabel"
+    />
+
     <main class="keyboard__list">
       <button class="keyboard__add-button button button--icon button--primary icon--add"><span>Add layer</span></button>
       <div v-for="ghost in uppers" class="keyboard keyboard--ghost keyboard--ghost-upper">
@@ -16,7 +17,7 @@
         </ul>
       </div>
       <div class="keyboard">
-        <ul class="keyboard__keys">
+        <ul class="keyboard__keys":style="keyboardTiltStyle">
           <li v-for="(key, i) in keys" class="keyboard__key key" :class="`key--${i}`">
             <span class="key__name">{{ key.name }}</span>
             <span class="key__code">{{ key.code }}</span>
@@ -30,25 +31,51 @@
       </div>
       <button class="keyboard__add-button button button--icon icon--add"><span>Add layer</span></button>
     </main>
+
   </div>
 </template>
 
 <script>
 import keymap from '@/assets/keymaps/semonje'
+import VerticalSlider from '@/components/VerticalSlider'
 
 export default {
   name: 'home',
+  components: {
+    VerticalSlider,
+  },
   data () {
     return {
       keys: keymap,
       rowAmount: 4,
       uppers: 0,
       lowers: 0,
+      slider: {
+        value: 50,
+        min: 0,
+        max: 100,
+      },
     }
   },
   computed: {
     rows() {
       return []
+    },
+    keyboardTilt() {
+      const val = this.slider.value
+      const minTilt = 0
+      const maxTilt = 50
+
+      const tilt = val * (maxTilt / this.slider.max)
+
+      return tilt;
+    },
+    keyboardTiltStyle() {
+      return { transform: `rotateX(${this.keyboardTilt}deg)`}
+    },
+    sliderLabel() {
+      const deg = Math.floor(this.keyboardTilt)
+      return `${deg}° degrees`
     },
   },
 }
