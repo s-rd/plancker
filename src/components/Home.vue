@@ -17,7 +17,7 @@
         </ul>
       </div>
       <div class="keyboard">
-        <ul class="keyboard__keys" :style="keyboardTiltStyle">
+        <ul class="keyboard__keys" :style="keyboardTiltStyle" ref="key-wrapper">
           <li v-for="(key, i) in keys" class="keyboard__key key" :class="`key--${i}`" :ref="`key--${i}`">
             <span class="key__name">{{ key.name }}</span>
             <span class="key__code">{{ key.code }}</span>
@@ -46,6 +46,10 @@ export default {
   },
   data () {
     return {
+      dragging: false,
+      draggingEl: null,
+      draggingOffsetTop: 0,
+      draggingOffsetLeft: 0,
       keys: keymap,
       rowAmount: 4,
       uppers: 0,
@@ -59,6 +63,8 @@ export default {
   },
   mounted() {
     this.addEventListeners()
+    this.draggingOffsetTop = this.$refs['key-wrapper'].offsetTop
+    this.draggingOffsetLeft = this.$refs['key-wrapper'].offsetLeft
   },
   destroyed() {
     this.removeEventListeners()
@@ -67,12 +73,23 @@ export default {
     handleDrag(e) {
       if (!e.target || !e.target.classList.contains('key')) return
       e.preventDefault()
-      console.log('heisann', e)
-      e.target.classList.add('key--drag')
+      this.draggingEl = e.target
+      this.dragging = true
+    },
+    drag(e) {
+      if (!this.dragging) return
+      this.draggingEl.classList.add('key--drag')
+      const top = `${e.clientY - 500}px`
+      const left = `${e.clientX - 450}px`
+      this.draggingEl.style.top = top
+      this.draggingEl.style.left = left
     },
     stopDrag(e) {
+      if (!this.dragging) return
       e.preventDefault()
-      e.target.classList.remove('key--drag')
+      this.draggingEl.classList.remove('key--drag')
+      this.draggingEl = null
+      this.dragging = false
     },
     addEventListeners() {
       document.addEventListener('mousedown', this.handleDrag)

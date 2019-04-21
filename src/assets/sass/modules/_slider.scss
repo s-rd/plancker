@@ -51,9 +51,12 @@
   &__handle-label {
     opacity: 0;
     position: absolute;
+    width: auto;
+    max-width: 10px;
+    overflow: hidden;
     margin-left: $spacing--medium;
     top: 50%;
-    transform: translate(-1rem, -52%);
+    transform: translate(0, -52%);
     padding: $spacing;
     background: $color__primary;
     border-radius: 35px;
@@ -61,7 +64,7 @@
     font-size: 1.2rem;
     color: $color__black;
     white-space: nowrap;
-    transition: ease 0.3s transform, ease 0.3s opacity;
+    transition: ease 0.3s opacity, ease-out 0.3s 2s max-width;
     transition-delay: 0.1s;
     box-shadow: rgba($color__tertiary, 0.05) 0px 3px 25px;
     pointer-events: none;
@@ -95,7 +98,7 @@
     .slider__handle-label {
       opacity: 1;
       visibility: visible;
-      transform: translate(0, -52%);
+      max-width: 120px;
     }
     .slider__fill {
       transition: 0s;

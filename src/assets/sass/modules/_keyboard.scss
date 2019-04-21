@@ -19,7 +19,7 @@
     display: grid;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow: visible;
     transform-style: flat;
     transform: rotateX(25deg);
     transition: ease 0.5s transform;
@@ -72,6 +72,7 @@
   align-items: center;
   justify-content: center;
   transition: ease 0.3s all;
+  position: static;
   cursor: grab;
 
   > * {
@@ -106,7 +107,17 @@
   &--47 { border-bottom-right-radius: 17px; }
 
   &--drag {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 110px;
     background: $color__primary;
+    border: 0px;
+    border-radius: 15px;
+    box-shadow: rgba($color__black, 0.1) 0px 5px 30px;
+    z-index: 100;
+    transition: 0s;
     &:hover {
       background: $color__primary;
     }
