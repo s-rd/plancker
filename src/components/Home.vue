@@ -65,10 +65,14 @@ export default {
   },
   methods: {
     handleDrag(e) {
-      if (!e.target && !e.target.classList.contains('key')) return
+      if (!e.target || !e.target.classList.contains('key')) return
       e.preventDefault()
       console.log('heisann', e)
       e.target.classList.add('key--drag')
+    },
+    stopDrag(e) {
+      e.preventDefault()
+      e.target.classList.remove('key--drag')
     },
     addEventListeners() {
       document.addEventListener('mousedown', this.handleDrag)
