@@ -71,7 +71,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: ease 1s 1s background;
+  transition: ease 0.3s all;
+  cursor: grab;
+
+  > * {
+    pointer-events: none;
+  }
 
   &__name {
     font-weight: 600;
@@ -87,6 +92,9 @@
     display: none;
   }
 
+  &:active {
+    cursor: grabbing;
+  }
   &:hover {
     background: $color__primary;
     transition: 0s;
@@ -96,4 +104,11 @@
   &--11 { border-top-right-radius: 17px; }
   &--36 { border-bottom-left-radius: 17px; }
   &--47 { border-bottom-right-radius: 17px; }
+
+  &--drag {
+    background: $color__primary;
+    &:hover {
+      background: $color__primary;
+    }
+  }
 }

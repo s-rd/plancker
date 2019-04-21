@@ -18,7 +18,7 @@
     bottom: 0;
     width: 8px;
     top: 50%;
-    background: $color__black;
+    background: $color__light;
     position: absolute;
     border-radius: inherit;
     transition: ease 0.3s all;
@@ -99,6 +99,8 @@
     }
     .slider__fill {
       transition: 0s;
+      transition: ease 0.3s background;
+      background: $color__black;
     }
   }
 }

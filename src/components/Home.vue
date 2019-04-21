@@ -17,8 +17,8 @@
         </ul>
       </div>
       <div class="keyboard">
-        <ul class="keyboard__keys":style="keyboardTiltStyle">
-          <li v-for="(key, i) in keys" class="keyboard__key key" :class="`key--${i}`">
+        <ul class="keyboard__keys" :style="keyboardTiltStyle">
+          <li v-for="(key, i) in keys" class="keyboard__key key" :class="`key--${i}`" :ref="`key--${i}`">
             <span class="key__name">{{ key.name }}</span>
             <span class="key__code">{{ key.code }}</span>
           </li>
@@ -56,6 +56,30 @@ export default {
         max: 100,
       },
     }
+  },
+  mounted() {
+    this.addEventListeners()
+  },
+  destroyed() {
+    this.removeEventListeners()
+  },
+  methods: {
+    handleDrag(e) {
+      if (!e.target && !e.target.classList.contains('key')) return
+      e.preventDefault()
+      console.log('heisann', e)
+      e.target.classList.add('key--drag')
+    },
+    addEventListeners() {
+      document.addEventListener('mousedown', this.handleDrag)
+      document.addEventListener('mouseup', this.stopDrag)
+      document.addEventListener('mousemove', this.drag)
+    },
+    removeEventListeners() {
+      document.removeEventListener('mousedown', this.handleDrag)
+      document.removeEventListener('mouseup', this.stopDrag)
+      document.removeEventListener('mousemove', this.drag)
+    },
   },
   computed: {
     rows() {
