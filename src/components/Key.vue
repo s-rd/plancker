@@ -1,8 +1,13 @@
 <template>
-  <li class="key" :class="`key--${index}`" :ref="`key--${index}`">
+  <div
+    class="key"
+    :class="keyStyle"
+    :ref="`key--${index}`"
+    @click="dragging = true"
+  >
     <span class="key__name">{{ name }}</span>
     <span class="key__code">{{ code }}</span>
-  </li>
+  </div>
 </template>
 
 <script>
@@ -13,9 +18,22 @@ export default {
       type: Object,
       required: true,
     },
+    dragging: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return this.keyData
+  },
+  computed: {
+    keyStyle() {
+      const dragging = this.dragging && 'key--placeholder'
+      const empty = !this.keyData && 'key--empty'
+      const index = `key--${this.index}`
+      return [ dragging, empty, index ]
+    },
   },
 }
 </script>

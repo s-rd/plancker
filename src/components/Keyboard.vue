@@ -2,12 +2,17 @@
   <div class="keyboard">
 
     <ul class="keyboard__keys" :style="keyboardTiltStyle" ref="key-wrapper">
-      <key
+      <li
+        class="keyboard__key"
         v-for="(key, index) in keys"
         :key="index"
-        :key-data="{ ...key, index }"
-        class="keyboard__key"
-      />
+        :class="`keyboard__key--${index}`"
+      >
+        <key
+          :key-data="{ ...key, index }"
+          :dragging="false"
+        />
+      </li>
     </ul>
 
   </div>
